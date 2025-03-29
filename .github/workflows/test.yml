@@ -1,6 +1,6 @@
-name: Run Tests on Push
+name: Run Tests on Push and Pull Request
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
