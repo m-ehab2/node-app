@@ -18,7 +18,7 @@ jobs:
           cache: "npm"
   
       - name: Install Dependencies
-        run: npm ci  # ✅ أسرع من npm install
+        run: npm ci  
 
       - name: Run Tests
-        run: npm test  # ✅ اختصار أفضل من npm run test
+        run: npm test  
