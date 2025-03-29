@@ -1,6 +1,8 @@
-name: Run Tests on Push
+name: Run Tests
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   test:
@@ -16,7 +18,7 @@ jobs:
           cache: "npm"
   
       - name: Install Dependencies
-        run: npm install
+        run: npm ci  # ✅ أسرع من npm install
 
       - name: Run Tests
-        run: npm run test
+        run: npm test  # ✅ اختصار أفضل من npm run test
