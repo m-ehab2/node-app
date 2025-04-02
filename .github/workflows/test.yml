@@ -1,22 +1,36 @@
-name: Run Tests on Push
+name: Run Tests
+ 
+on:
 
-on: [push]
+  push:
 
+  pull_request:
+ 
 jobs:
+
   test:
+
     runs-on: ubuntu-latest
+ 
     steps:
+
       - name: Checkout Repository
-        uses: actions/checkout@v4
 
+        uses: actions/checkout@v3
+ 
       - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: "npm"
-  
-      - name: Install Dependencies
-        run: npm install
 
+        uses: actions/setup-node@v3
+
+        with:
+
+          node-version: 18  # Adjust the Node.js version as needed
+ 
+      - name: Install Dependencies
+
+        run: npm install
+ 
       - name: Run Tests
-        run: npm run test
+
+        run: npm test
+ 
